@@ -1,0 +1,40 @@
+body{
+    display: grid;
+    place-items: center;
+    background: #5c5c5c;
+    height: 100dvh;
+    overflow: hidden;
+}
+#toggle{
+    display: none;
+}
+label{
+    padding: 4em 10em;
+    border: 0.1em solid #fff;
+    border-radius: 5em;
+    transition: .5s all ease-in;
+    position: relative;
+    background-image: url(day.png);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 7px 15px 35px 0px rgba(0,0,0,0.75);
+}
+label::before{
+    content: '';
+    padding: 3.5em;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .5s ease;
+    cursor: pointer;
+}
+#toggle:checked ~ label::before{
+    left: 97%;
+    transform: translate(-98%, -50%);
+}
+#toggle:checked ~ label{
+    background-image: url(night.png);
+}
